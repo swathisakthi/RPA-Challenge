@@ -1,0 +1,227 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="736,3176" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Description :- In this activity, Read the excel file . Fill the respectve field details in word file . Save and Email the files." sap:VirtualizedContainerService.HintSize="644,3011" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="DtExcel" />
+      <Variable x:TypeArguments="x:String" Name="StrPwd" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="Read the excel file with the employee details." DataTable="[DtExcel]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="602,118" sap2010:WorkflowViewState.IdRef="ReadRange_1" PreserveFormat="True" SheetName="Sheet1" WorkbookPath="C:\Users\ELCOT\Desktop\RPA-Files\Appoinment Letter Generation.xlsx">
+      <ui:ReadRange.Range>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </ui:ReadRange.Range>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
+    <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Write the appointment letter for every single person details in the excel." DataTable="[DtExcel]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="602,2719" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,2540" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p:WordApplicationScope sap2010:Annotation.AnnotationText="Letter is in word file type so the word application scope is used." AutoSave="False" CreateNewFile="False" DisplayName="Word Application Scope" FilePath="C:\Users\ELCOT\Downloads\AppoinmentLetter.docx" sap:VirtualizedContainerService.HintSize="510,2024" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+              <p:WordApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WordDocument">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1884" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p:WordReplaceText Found="{x:Null}" sap2010:Annotation.AnnotationText="To replace the word date with actual date as given in  the excel workbook." DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,193" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[row.item(&quot;Date&quot;).ToString]" ReplaceAll="True" Search="%[Date]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordReplaceText>
+                    <p:WordReplaceText Found="{x:Null}" sap2010:Annotation.AnnotationText="To replace the word address with actual address as given in the excel workbook." DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[row.item(&quot;Address&quot;).ToString]" ReplaceAll="True" Search="%[Address]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordReplaceText>
+                    <p:WordReplaceText Found="{x:Null}" sap2010:Annotation.AnnotationText="To replace the word applicant name with actual applicant name as given in the excel workbook." DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[row.item(&quot;Applicant Name&quot;).ToString]" ReplaceAll="True" Search="%[Applicant Name]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordReplaceText>
+                    <p:WordReplaceText Found="{x:Null}" sap2010:Annotation.AnnotationText="To replace the word company name with actual company name as given in the excel workbook." DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="[row.item(&quot;Company Name&quot;).ToString]" ReplaceAll="True" Search="%[Company Name]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordReplaceText>
+                    <p:WordReplaceText Found="{x:Null}" sap2010:Annotation.AnnotationText="To replace the word job title with actual job title as given in the excel workbook." DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="WordReplaceText_5" Replace="[row.item(&quot; Job Title&quot;).ToString]" ReplaceAll="True" Search="%[Job Title]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordReplaceText>
+                    <p:WordReplaceText Found="{x:Null}" sap2010:Annotation.AnnotationText="To replace the word starting date with actual starting date as given in the excel workbook." DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="WordReplaceText_6" Replace="[row.item(&quot;Starting Date&quot;).ToString]" ReplaceAll="True" Search="%[Starting Date]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordReplaceText>
+                    <p:WordSaveAs sap2010:Annotation.AnnotationText="Save the word document in the file name of respective applicant name as given in the excel workbook." DisplayName="Save Document As" FilePath="[&quot;C:\Users\ELCOT\Desktop\RPA-Files\&quot;+row.item(&quot;Applicant Name&quot;).ToString+&quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="434,209" sap2010:WorkflowViewState.IdRef="WordSaveAs_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:WordSaveAs>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="Display that appoinment letter is saved." DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Appoinment letter saved in new folder&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:MessageBox>
+                  </Sequence>
+                </ActivityAction>
+              </p:WordApplicationScope.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:WordApplicationScope>
+            <Delay sap2010:Annotation.AnnotationText="Delay some time." Duration="00:00:03" sap:VirtualizedContainerService.HintSize="510,53" sap2010:WorkflowViewState.IdRef="Delay_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Delay>
+            <ui:GetPassword sap2010:Annotation.AnnotationText="Used to encrypt the password." DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="510,64" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYqnPKqQokECp1PweST+Q5gAAAAACAAAAAAAQZgAAAAEAACAAAADn6lOj43SYcH96lNUzz6d7AMqRql3+nAWIb6zSeyo/AgAAAAAOgAAAAAIAACAAAACnC9YMib/TnElMTp+G6nENjhmVzGMnPM4NYQnrRGa89xAAAABBOgNFCzvRsYfT/o3cNwuGQAAAAHoawzUUG1lZBMWbRUgbHU/YOLcVHoszEEfAVgDRry96hGBLGurBvlrKYFcJqEsv2gcQiJhkmDjLVfZg4MWzzVc=" Result="[StrPwd]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetPassword>
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="To send the mail with appointment letter as attachment to respective Email IDs." Body="Bot send the mail with attachment of appointment letter to you" DisplayName="Send SMTP Mail Message" Email="swathisakthicbe2102@gmail.com" EnableSSL="True" From="swathisakthicbe2102@gmail.com" sap:VirtualizedContainerService.HintSize="510,187" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="Bot" Password="[StrPwd]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Appointment letter" To="[row.Item(&quot;Email ID&quot;).ToString]">
+              <ui:SendMail.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                  <InArgument x:TypeArguments="x:String">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\ELCOT\Desktop\RPA-Files\&quot;+row.item(&quot;Applicant Name&quot;).ToString+&quot;.docx&quot;" />
+                  </InArgument>
+                </scg:List>
+              </ui:SendMail.Files>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:SendMail>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>
